@@ -19,5 +19,6 @@ public class Principal {
 
         Musica umaMusica = new Musica();
         umaMusica.setTitulo("Down em Mim");
+        System.out.println(umaMusica.getTitulo());
     }
 }
