@@ -12,5 +12,12 @@ public class Principal {
         Filme meuFilme = new Filme();
         meuFilme.setNome("Forrest Gump: O contador de histórias");
         System.out.println(meuFilme.getNome());
+
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("Avatar");
+        System.out.println(outroFilme.getNome());
+
+        Musica umaMusica = new Musica();
+        umaMusica.setTitulo("Down em Mim");
     }
 }
