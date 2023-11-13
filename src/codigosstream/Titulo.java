@@ -1,12 +1,17 @@
 package codigosstream;
 
 public class Titulo {
-    private String nome;
-    private int anoDeLancamento;
+    private final String nome;
+    private final int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
 
     public String getNome() {
         return nome;
@@ -26,14 +31,6 @@ public class Titulo {
 
     public int getTotalDeAvaliacoes() {
         return totalDeAvaliacoes;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setAnoDeLancamento(int anoDeLancamento) {
-        this.anoDeLancamento = anoDeLancamento;
     }
 
     public void setIncluidoNoPlano(boolean incluidoNoPlano) {
