@@ -4,11 +4,11 @@ import codigosstream.Filme;
 import codigosstream.Serie;
 import codigosstream.Titulo;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme("O poderoso chefão", 1970);
+        Filme meuFilme = new  Filme("O poderoso chefão", 1970);
         Serie lost = new Serie("Lost", 2000);
         Filme outroFilme = new Filme("Avatar", 2023);
         var filmeDoPaulo = new Filme("Dogville", 2003);
@@ -19,7 +19,7 @@ public class PrincipalComListas {
         outroFilme.avalia(10);
         filmeDoPaulo.avalia(9);
 
-        ArrayList<Titulo> listaDeFilmes = new ArrayList<>();
+        List<Titulo> listaDeFilmes = new LinkedList<>();
         listaDeFilmes.add(filmeDoPaulo);
         listaDeFilmes.add(meuFilme);
         listaDeFilmes.add(outroFilme);
@@ -30,5 +30,11 @@ public class PrincipalComListas {
                 System.out.println("Classificação: " + filme.getClassficacao());
             }
         }
+
+        Collections.sort(listaDeFilmes);
+        System.out.println(listaDeFilmes);
+
+        listaDeFilmes.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println(listaDeFilmes);
     }
 }
