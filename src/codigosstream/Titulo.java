@@ -1,11 +1,10 @@
 package codigosstream;
 
-import com.google.gson.annotations.SerializedName;
+
+import excecoes.ErroDEConversaoDeAno;
 
 public class Titulo implements Comparable<Titulo>{
-    @SerializedName("Title")
     private final String nome;
-    @SerializedName("Year")
     private final int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -19,6 +18,10 @@ public class Titulo implements Comparable<Titulo>{
 
     public Titulo(TituloOmdb meuTituloOmdb){
         this.nome = meuTituloOmdb.title();
+        if(meuTituloOmdb.year().length() > 4){
+            throw new ErroDEConversaoDeAno("Quantidade de caracteres é inválida. Não pode ser maior" +
+                    " que 04");
+        }
         this.anoDeLancamento = Integer.parseInt(meuTituloOmdb.year());
         this.duracaoEmMinutos = Integer.parseInt(meuTituloOmdb.runtime().substring(0, 2));
     }
